@@ -1,5 +1,3 @@
-[13:32] Snewhadeep Saha
-
 pipeline {
 
     agent any
