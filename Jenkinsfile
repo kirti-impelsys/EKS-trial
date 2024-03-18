@@ -60,6 +60,8 @@ pipeline {
             steps {
                 script {
                     dir('terraform') {
+                        aws eks update-kubeconfig --name my-eks-cluster --region us-east-1
+                        pip install --upgrade awscli
                         sh "terraform destroy -auto-approve"
                     }
                 }
