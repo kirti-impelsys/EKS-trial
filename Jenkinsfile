@@ -35,14 +35,30 @@ pipeline {
                 }
             }
         }
+        
+        stage("Delete the EKS Frontend") {
+            steps {
+                script {
+                    dir('k8s_manifests/mongo') {
+                        sh "kubectl delete -f ."
+                    }
+                }
+            }
+        }
+        stage("Deletion of Backend") {
+            steps {
+                script {
+                    dir('k8s_manifests') {
+                        sh "kubectl delete -f ."
+                    }
+                }
+            }
+        }
 
         stage("Delete the EKS Cluster") {
             steps {
                 script {
                     dir('terraform') {
-                        sh "terraform init"
-                        sh "terraform validate"
-                        sh "terraform plan"
                         sh "terraform delete -auto-approve"
                     }
                 }
