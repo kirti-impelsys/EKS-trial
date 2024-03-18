@@ -59,7 +59,7 @@ pipeline {
             steps {
                 script {
                     dir('terraform') {
-                        sh "terraform delete -auto-approve"
+                        sh "terraform apply delete -auto-approve"
                     }
                 }
             }
