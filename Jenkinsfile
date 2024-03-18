@@ -36,7 +36,7 @@ pipeline {
             }
         }
         
-        stage("Delete the EKS Frontend") {
+       /* stage("Delete the EKS Frontend") {
             steps {
                 script {
                     dir('k8s_manifests/mongo') {
@@ -44,7 +44,7 @@ pipeline {
                     }
                 }
             }
-        }
+        } */
         stage("Deletion of Backend") {
             steps {
                 script {
