@@ -60,7 +60,7 @@ pipeline {
             steps {
                 script {
                     dir('terraform') {
-                        aws eks update-kubeconfig --name my-eks-cluster --region us-east-1
+                        sh "aws eks update-kubeconfig --name my-eks-cluster --region us-east-1"
                         sh "terraform destroy -auto-approve"
                     }
                 }
