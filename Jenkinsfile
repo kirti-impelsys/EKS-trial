@@ -21,7 +21,7 @@ pipeline {
             }
         } */
 
-        stage("Deploy to EKS") {
+       /* stage("Deploy to EKS") {
             steps {
                 script {
                     dir('k8s_manifests') {
@@ -34,7 +34,7 @@ pipeline {
                     }
                 }
             }
-        }
+        } */
         
        /* stage("Delete the EKS Frontend") {
             steps {
@@ -45,7 +45,8 @@ pipeline {
                 }
             }
         } */
-        stage("Deletion of Backend") {
+        
+        /* stage("Deletion of Backend") {
             steps {
                 script {
                     dir('k8s_manifests') {
@@ -53,7 +54,7 @@ pipeline {
                     }
                 }
             }
-        }
+        } */
 
         stage("Delete the EKS Cluster") {
             steps {
