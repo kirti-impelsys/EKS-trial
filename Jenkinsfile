@@ -60,6 +60,9 @@ pipeline {
             steps {
                 script {
                     dir('terraform') {
+                        sh "terraform init"
+                        sh "terraform validate"
+                        sh "terraform plan"
                         sh "terraform destroy -auto-approve"
                     }
                 }
