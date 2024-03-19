@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     dir('k8s_manifests') {
-                        sh "aws eks update-kubeconfig --name my-eks-cluster"
+                        sh "aws eks update-kubeconfig --name my-eks-cluster --region us-east-2"
                         sh "kubectl apply -f backend-deployment.yaml"
                         sh "kubectl apply -f backend-service.yaml"
                         sh "kubectl apply -f frontend-deployment.yaml"
