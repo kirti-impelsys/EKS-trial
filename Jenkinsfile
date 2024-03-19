@@ -8,7 +8,7 @@ pipeline {
     }
 
     stages {
-        /* stage("Create an EKS Cluster") {
+        stage("Create an EKS Cluster") {
             steps {
                 script {
                     dir('terraform') {
@@ -19,7 +19,7 @@ pipeline {
                     }
                 }
             }
-        } */
+        }
 
        /* stage("Deploy to EKS") {
             steps {
@@ -56,7 +56,7 @@ pipeline {
             }
         } */
 
-        stage("Delete the EKS Cluster") {
+        /* stage("Delete the EKS Cluster") {
             steps {
                 script {
                     dir('terraform') {
@@ -67,6 +67,6 @@ pipeline {
                     }
                 }
             }
-        }
+        } */
     }
 }
